@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nested Loop</title>
+
+	<meta charset="UTF-8">
+	<meta name="author" content="Alyssa Bituin">
+	<meta name="keywords" content="loop statements, nested loops">
+	<meta name="revised" content="05-05-2022">
+
+    
+</head>
+
+<body>
+    <p>[enter a number between 2 and 10 (inclusive)]</p>
+	<form>
+        <input type="number" id="no1" name="no1">
+        
+        <label for="no2">by</label>
+        <input type="number" id="no2" name="no2"><br><br>
+        
+        <input type="button" value="Click here when ready!" onclick="check()">
+    </form>
+
+    <script>
+        function check() {
+            if (document.getElementById("no1").value < 2 || document.getElementById("no2").value < 2 || document.getElementById("no1").value > 10 || document.getElementById("no2").value > 10 ) {
+                alert("Please enter numbers between 2 and 10 (inclusive)");
+            }
+            else {
+                var x = document.getElementById("no1").value;
+                var y = document.getElementById("no2").value;
+
+                document.write("<table border='1px'>");
+
+                for (var counter = 1; counter <= x; counter++) {
+                    document.write("<tr style='height:30px;'>");
+
+                    for (var counterTwo = 1; counterTwo <= y; counterTwo++){
+                        document.write("<td style='width:30px; text-align:center;'>" + counter*counterTwo + "</td>");
+                    }
+
+                    document.write("</tr>");;
+                }
+                
+                document.write("</table>");
+            }            
+        }
+    </script>
+</body>
+</html>
